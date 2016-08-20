@@ -188,6 +188,9 @@
 			if( sectionStack[i] instanceof Array ) {
 				markdownSections += '<section '+ options.attributes +'>';
 
+				// hack against freeze before vertical section
+				markdownSections += "&nbsp;";
+
 				sectionStack[i].forEach( function( child ) {
 					markdownSections += '<section data-markdown>' +  createMarkdownSlide( child, options ) + '</section>';
 				} );
